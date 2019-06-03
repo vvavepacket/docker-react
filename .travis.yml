@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t vvavepacket/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run vvavepacket/docker-react npm run test -- --coverage
