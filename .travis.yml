@@ -6,4 +6,4 @@ before_install:
   - docker build -t vvavepacket/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run vvavepacket/docker-react npm run test -- --coverage
+  - docker run -e CI=true vvavepacket/docker-react npm run test -- --coverage
